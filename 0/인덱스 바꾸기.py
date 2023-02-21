@@ -1,8 +1,7 @@
 def solution(my_string, num1, num2):
     answer = ''
-    answer = my_string.replace(my_string[1], my_string[2])
-    print()
-    print(answer.replace(my_string[2], my_string[1]))
-    return answer
+    my_string = list(my_string)
+    my_string[num1], my_string[num2] = my_string[num2], my_string[num1]
+    return answer.join(my_string)
 
 print(solution('hello', 1, 2))
