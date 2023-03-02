@@ -1,14 +1,22 @@
-from collections import Counter
-
 def solution(array):
-    c = Counter(array)
-    mode = c.most_common(2)
-    print(len(mode))
-    if len(mode) <= 2:
-      return -1
+  count = {}
+  for i in array:
+    if i not in count:
+      count[i] = 1
     else:
-      return mode[0][0]
+      count[i] = count[i]+1
+
+  c1 = sorted(count.values(), reverse=True)
+
+  if len(count) == 1:
+    return c1[0]
+  
+  if c1[0] == c1[1]:
+    return -1
+  else:
+    return c1[0]
+    
 
 
 
-print(solution([1, 2, 3, 3, 3, 4]))
+print(solution([1]))
