@@ -1,7 +1,6 @@
 def solution(phone_number):
-    answer = ''
     for i in range(len(phone_number)-4):
-      answer.replace(phone_number, '*')
-    return answer
+      phone_number = phone_number.replace(phone_number[i], '*', 1)
+    return phone_number
 
 print(solution('01033334444'))
